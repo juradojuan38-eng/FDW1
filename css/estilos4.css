@@ -1,0 +1,501 @@
+/* ------------------- RESET & FUENTE ------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.accordion-button {
+  font-family: 'Anton', sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+    /* ------------------- NAVBAR ------------------- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #E30E1E;
+      font-size: 24px;
+      font-family: 'Anton', sans-serif;
+      padding: 0px 25px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white !important;
+      padding: 10px 15px 3px; 
+      margin-right: 38px;
+      transition: color 0.3s;
+      position: relative; 
+      display: inline-block;
+    }
+
+    .navbar a:hover {
+      color: white !important;
+    }
+
+    /* El pseudo-elemento que será la línea */
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      left: 9px; /* Ajuste para que la línea empiece donde termina el padding izquierdo */
+      right: 9px; /* Ajuste para que la línea termine donde empieza el padding derecho */
+      bottom: 0;
+      height: 6px;
+      background-color: white;
+      transform: scaleX(0); 
+      transform-origin: left; /* Animación desde la izquierda */
+      transition: transform 0.3s ease;
+    }
+    
+    /* Efecto hover: la línea blanca aparece al pasar el mouse */
+    .navbar a:hover::after {
+      transform: scaleX(1); /* La línea crece hasta su ancho completo */
+    }
+
+    .navbar .navbar-brand img {
+      pointer-events: none;
+    }
+
+    
+    .linea {
+      width: 100%;        /* largo */
+      height: 18px;        /* grosor */
+      background: #FCDA00;  /* color */
+    }
+
+
+
+    .navbar-toggler {
+      margin-top: -90px;
+    }
+
+    /* Logo container */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .navbar .logo-container img {
+      max-width: 100px;
+      height: auto;
+    }
+
+    /* Logo en pantallas grandes */
+    @media (min-width: 992px) {
+      .logo-container {
+        justify-content: flex-start;
+        padding-left: 15px;
+      }
+    }
+    @media (max-width:576px ){
+      .navbar a::after{
+      left: 1px; /* Ajuste para que la línea empiece donde termina el padding izquierdo */
+      right: 5px;
+      }
+      .navbar a:hover::after {
+      transform: scaleX(5); /* La línea crece hasta su ancho completo */
+    }
+    }
+
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    padding: 20px;
+    color: white;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Sección de Introducción */
+.intro {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    color: #09090a;
+    margin-bottom: 40px;
+    font-family: 'Anton', serif;
+    text-transform: uppercase;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 60px;
+}
+
+.category {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    font-family: 'Anton', serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .categories {
+        grid-template-columns: 1fr;
+    }
+}
+.musculacion,.funcional{
+background-color: #3B3B40;
+}
+.crossfit,.pilates{
+background-color: #E30E1E;
+
+}
+
+/* Sección Rutina de Musculación */
+.musculacion,
+.crossfit,
+.funcional,
+.pilates {
+    margin-top: 0px;
+    padding: 60px;
+    color: white;
+    border-radius: 0px;
+    width: 100%; /* Cambiado para ocupar todo el ancho disponible */
+}
+
+.musculacion-header h1,
+.crossfit-header h1,
+.funcional-header h1,
+.pilates-header h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: white;
+    font-family: 'Anton', serif; /* Aplica la fuente Kaisei Tokumin */
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+.musculacion-options,
+.crossfit-options,
+.funcional-options,
+.pilates-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%; /* Se asegura de ocupar todo el ancho */
+}
+
+.musculacion-option,
+.crossfit-option,
+.funcional-option,
+.pilates-option {
+    width: 45%;
+    background-color: white;
+    color: #242323;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.musculacion-option h2,
+.crossfit-option h2,
+.funcional-option h2,
+.pilates-option h2 {
+    color: #000000; /* Azul */
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Asegura que los títulos estén en mayúsculas */
+    font-family: 'Anton', serif; /* Aplica la fuente Kaisei Tokumin */
+}
+
+.musculacion-option ul,
+.crossfit-option ul,
+.funcional-option ul,
+.pilates-option ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.musculacion-option li,
+.crossfit-option li,
+.funcional-option li,
+.pilates-option li {
+    margin-bottom: 10px;
+}
+
+.musculacion-option li strong,
+.crossfit-option li strong,
+.funcional-option li strong,
+.pilates-option li strong {
+    color: #000000; /* Azul */
+}
+
+/* Estilos para dispositivos pequeños */
+@media(max-width: 480px){
+  .intro{
+    height: 1450px;
+  }
+  .categories{
+    width: 100%;
+    height: 1300px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .category{
+    width: 89%;
+    height: 20%;
+    max-width: 100%;
+  }
+  .pilates{
+    margin-bottom: 20px;
+  }
+  .musculacion-options, .crossfit-options, .funcional-options, .pilates-options{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .musculacion-option, .crossfit-option, .funcional-option, .pilates-option{
+    width: 100%;
+  }
+}
+/* ------------------- FOOTER ------------------- */
+.footer {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Responsivo */
+  gap: 15px;
+  text-align: left;
+}
+
+.footer-logo-container {
+  flex: 12;
+  padding-left: 30px; /* Mueve el logo ligeramente */
+}
+.footer-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.footer-img {
+  width: 150px;
+  height: 150px;
+}
+
+.footer-text {
+  flex: 2;
+  font-size: 16px;
+  line-height: 1.6;
+  
+}
+
+.footer-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-text p {
+  font-size: 18px;
+  margin: 0px 0;
+  line-height: 1.6;
+  padding-bottom: 30px;
+}
+
+.social-icons {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 15px;
+}
+
+
+.social-icons .social-icon {
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.3s;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  padding: 0; /* Asegúrate de que no haya padding adicional */
+  filter: grayscale(100%);
+}
+.social-icons img:hover{
+  filter: sepia(100%);
+}
+.social-icons-img-facebook,
+.social-icons-img-Twi,
+.social-icons-img-Ins {
+  padding-right: 0; /* Elimina cualquier padding adicional */
+}
+
+
+.social-icons .social-icon:hover {
+  opacity: 0.7;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 30px solid #0d75d3;
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+}
+
+.footer-copy {
+  
+  font-size: 14px;
+}
+/* Responsividad */
+@media (max-width: 1024px) {
+  .footer{
+    height: 380px;
+  }
+  .container{
+    width: 100%;
+    height: 89%;
+  }
+  .footer-logo{
+    width: 40%;
+    padding-top: 20px;
+  }
+  .footer-copy{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    padding: 0;
+  }
+  /*ubicacion*/
+  .ubicacion-layout{
+    flex-direction: column;
+  }
+  .iframe {
+    display: block; /* Asegúrate de que sea un bloque adaptable */
+    max-width: 100%; /* Limita el ancho máximo al contenedor */
+    height: auto; /* Ajusta la altura proporcionalmente */
+    aspect-ratio: 16 / 9; /* Mantén la relación de aspecto */
+    border: 0; /* Opcional: elimina el borde */
+}
+}
+@media (max-width: 480px){
+  /*footer*/
+  .footer{
+    width: 100%;
+    height: 600px;
+  }
+  .container{
+    width: 100%;
+    height: 89%;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .footer-logo{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+  }
+  .footer-text{
+    padding-top: 30px;
+    height: 65%;
+    justify-content: center;
+  }
+  .footer-copy{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    padding: 0;
+  }
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  h1 {
+    margin-top: 20px;  /* Menos separación en pantallas pequeñas */
+    margin-bottom: 20px; /* Menos separación con los elementos debajo */
+  }
+}
+
+
+
+.accordion-collapse{
+  color: #000;
+}
+
+

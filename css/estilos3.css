@@ -1,0 +1,405 @@
+/* ------------------- NAVBAR ------------------- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #E30E1E;
+      font-size: 24px;
+      font-family: 'Anton', sans-serif;
+      padding: 0px 25px;
+    }
+    
+    .navbar a {
+      text-decoration: none;
+      color: white !important;
+      padding: 10px 15px 3px; 
+      margin-right: 38px;
+      transition: color 0.3s;
+      position: relative; 
+      display: inline-block;
+    }
+
+    .navbar a:hover {
+      color: white !important;
+    }
+
+    /* El pseudo-elemento que será la línea */
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      left: 9px; /* Ajuste para que la línea empiece donde termina el padding izquierdo */
+      right: 9px; /* Ajuste para que la línea termine donde empieza el padding derecho */
+      bottom: 0;
+      height: 6px;
+      background-color: white;
+      transform: scaleX(0); 
+      transform-origin: left; /* Animación desde la izquierda */
+      transition: transform 0.3s ease;
+    }
+    
+    /* Efecto hover: la línea blanca aparece al pasar el mouse */
+    .navbar a:hover::after {
+      transform: scaleX(1); /* La línea crece hasta su ancho completo */
+    }
+
+    .navbar .navbar-brand img {
+      pointer-events: none;
+    }
+
+    .linea {
+      width: 100%;        /* largo */
+      height: 18px;        /* grosor */
+      background: #FCDA00;  /* color */
+    }
+
+    .navbar-toggler {
+      margin-top: -90px;
+    }
+
+    /* Logo container */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .navbar .logo-container img {
+      max-width: 100px;
+      height: auto;
+    }
+
+    /* Logo en pantallas grandes */
+    @media (min-width: 992px) {
+      .logo-container {
+        justify-content: flex-start;
+        padding-left: 15px;
+      }
+    }
+    @media (max-width:576px ){
+      .navbar a::after{
+      left: 1px; /* Ajuste para que la línea empiece donde termina el padding izquierdo */
+      right: 5px;
+      }
+      .navbar a:hover::after {
+      transform: scaleX(5); /* La línea crece hasta su ancho completo */
+    }
+    }
+
+/* Estilos generales para el body */
+body {
+  font-family: 'Roboto', serif;
+  margin: 130px 56px 0 103px;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: black;
+  align-items: center;
+}
+
+/* Cuadro principal */
+.cuadro-principal {
+  background-color: white;
+  color: black;
+  padding: 100px 0px 100px 200px;
+  margin: 0px 40px 40px 40px;
+  width: 95%;
+  max-width: 1200px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Título del cuadro */
+h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+/* Subtítulo dentro del cuadro */
+p {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+/* Contenedor de los cuadros con información */
+.contenedor-cuadros {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  
+}
+
+/* Estilo del contenedor de cada cuadro con imagen a la izquierda */
+.info-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alineación de la imagen a la izquierda */
+  background-color: rgb(255, 255, 255); /* Color gris del contenedor */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  flex: 1;
+  height: 200px;
+  border: 2px solid rgba(0, 0, 0, .125);
+}
+
+/* Estilo de los cuadros de información */
+.cuadro {
+  background-color: rgb(255, 255, 255);
+  padding: 30px 50px 30px 50px;
+  border-radius: 8px;
+  text-align: left;
+  flex: 1;
+  height: 200px;
+  margin-bottom:25px;
+}
+
+/* Imagen dentro de cada cuadro */
+.imagen-cuadro {
+  width: 230px; /* Controla el tamaño de la imagen */
+  height: 230px;
+  border-top-left-radius: 8px;    /* esquina superior izquierda */
+  border-bottom-left-radius: 8px; /* esquina inferior izquierda */ /* Espacio entre la imagen y el texto */
+  object-fit: cover; /* Mantiene las proporciones */;
+}
+
+/* Estilo para los títulos de cada sección */
+.titulo-cuadro {
+  font-family: 'Anton', sans-serif;
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Estilo para los nombres */
+.nombre {
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 10px;
+}
+
+/* Estilo para la descripción debajo del nombre */
+.descripcion {
+  font-family: 'Roboto', serif;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  /* Ajustes del cuadro principal */
+  .cuadro-principal {
+    padding: 30px;
+    height: auto;
+  }
+
+  /* Hacer que la imagen y el contenido se apilen en pantallas pequeñas */
+  .info-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Reducir tamaño de la imagen */
+  .imagen-cuadro {
+    width: 80%;
+    height: 200px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  /* Ajustar padding y altura de los cuadros */
+  .cuadro {
+    padding: 15px;
+    height: 180px;
+  }
+}
+/* ------------------- FOOTER ------------------- */
+.footer {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Responsivo */
+  gap: 15px;
+  text-align: left;
+}
+
+.footer-logo-container {
+  flex: 12;
+  padding-left: 30px; /* Mueve el logo ligeramente */
+}
+.footer-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.footer-img {
+  width: 150px;
+  height: 150px;
+}
+
+.footer-text {
+  flex: 2;
+  font-size: 16px;
+  line-height: 1.6;
+  
+}
+
+.footer-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-text p {
+  font-size: 18px;
+  margin: 0px 0;
+  line-height: 1.6;
+  padding-bottom: 30px;
+}
+
+.social-icons {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 15px;
+}
+
+
+.social-icons .social-icon {
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.3s;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  padding: 0; /* Asegúrate de que no haya padding adicional */
+  filter: grayscale(100%);
+}
+.social-icons img:hover{
+  filter: sepia(100%);
+}
+.social-icons-img-facebook,
+.social-icons-img-Twi,
+.social-icons-img-Ins {
+  padding-right: 0; /* Elimina cualquier padding adicional */
+}
+
+
+.social-icons .social-icon:hover {
+  opacity: 0.7;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 30px solid #0d75d3;
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+}
+
+.footer-copy {
+  
+  font-size: 14px;
+}
+/* Responsividad */
+@media (max-width: 1024px) {
+  .footer{
+    height: 380px;
+  }
+  .container{
+    width: 100%;
+    height: 89%;
+  }
+  .footer-logo{
+    width: 40%;
+    padding-top: 20px;
+  }
+  .footer-copy{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    padding: 0;
+  }
+  /*ubicacion*/
+  .ubicacion-layout{
+    flex-direction: column;
+  }
+  iframe {
+    display: block; /* Asegúrate de que sea un bloque adaptable */
+    max-width: 100%; /* Limita el ancho máximo al contenedor */
+    height: auto; /* Ajusta la altura proporcionalmente */
+    aspect-ratio: 16 / 9; /* Mantén la relación de aspecto */
+    border: 0; /* Opcional: elimina el borde */
+}
+}
+@media (max-width: 480px){
+  /*footer*/
+  .footer{
+    width: 100%;
+    height: 600px;
+  }
+  .container{
+    width: 100%;
+    height: 89%;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .footer-logo{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+  }
+  .footer-text{
+    padding-top: 30px;
+    height: 65%;
+    justify-content: center;
+  }
+  .footer-copy{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    padding: 0;
+  }
+}
+
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  h1 {
+    margin-top: 20px;  /* Menos separación en pantallas pequeñas */
+    margin-bottom: 20px; /* Menos separación con los elementos debajo */
+  }
+}

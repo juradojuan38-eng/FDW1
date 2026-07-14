@@ -1,0 +1,513 @@
+/* ------------------- RESET & FUENTE ------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+    /* ------------------- NAVBAR ------------------- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #E30E1E;
+      font-size: 24px;
+      font-family: 'Anton', sans-serif;
+      padding: 0px 25px;
+    }
+    
+    .navbar a {
+      text-decoration: none;
+      color: white !important;
+      padding: 10px 15px 3px; 
+      margin-right: 38px;
+      transition: color 0.3s;
+      position: relative; 
+      display: inline-block;
+    }
+
+    .navbar a:hover {
+      color: white !important;
+    }
+
+    /* El pseudo-elemento que será la línea */
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      left: 9px; /* Ajuste para que la línea empiece donde termina el padding izquierdo */
+      right: 9px; /* Ajuste para que la línea termine donde empieza el padding derecho */
+      bottom: 0;
+      height: 6px;
+      background-color: white;
+      transform: scaleX(0); 
+      transform-origin: left; /* Animación desde la izquierda */
+      transition: transform 0.3s ease;
+    }
+    
+    /* Efecto hover: la línea blanca aparece al pasar el mouse */
+    .navbar a:hover::after {
+      transform: scaleX(1); /* La línea crece hasta su ancho completo */
+    }
+
+    .navbar .navbar-brand img {
+      pointer-events: none;
+    }
+
+    
+    .linea {
+      width: 100%;        /* largo */
+      height: 18px;        /* grosor */
+      background: #FCDA00;  /* color */
+    }
+
+
+
+    .navbar-toggler {
+      margin-top: -90px;
+    }
+
+    /* Logo container */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .navbar .logo-container img {
+      max-width: 100px;
+      height: auto;
+    }
+
+    /* Logo en pantallas grandes */
+    @media (min-width: 992px) {
+      .logo-container {
+        justify-content: flex-start;
+        padding-left: 15px;
+      }
+    }
+    @media (max-width:576px ){
+      .navbar a::after{
+      left: 1px; /* Ajuste para que la línea empiece donde termina el padding izquierdo */
+      right: 5px;
+      }
+      .navbar a:hover::after {
+      transform: scaleX(5); /* La línea crece hasta su ancho completo */
+    }
+    }
+
+
+
+/* ------------------- FOOTER ------------------- */
+.footer {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Responsivo */
+  gap: 15px;
+  text-align: left;
+}
+
+.footer-logo-container {
+  flex: 12;
+  padding-left: 30px; /* Mueve el logo ligeramente */
+}
+.footer-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.footer-img {
+  width: 150px;
+  height: 150px;
+}
+
+.footer-text {
+  flex: 2;
+  font-size: 16px;
+  line-height: 1.6;
+  
+}
+
+.footer-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-text p {
+  font-size: 18px;
+  margin: 0px 0;
+  line-height: 1.6;
+  padding-bottom: 30px;
+}
+
+.social-icons {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 15px;
+}
+
+
+.social-icons .social-icon {
+  width: 40px;
+  height: 40px;
+  transition: opacity 0.3s;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  padding: 0; /* Asegúrate de que no haya padding adicional */
+  filter: grayscale(100%);
+}
+.social-icons img:hover{
+  filter: sepia(100%);
+}
+.social-icons-img-facebook,
+.social-icons-img-Twi,
+.social-icons-img-Ins {
+  padding-right: 0; /* Elimina cualquier padding adicional */
+}
+
+
+.social-icons .social-icon:hover {
+  opacity: 0.7;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 30px solid #0d75d3;
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+}
+
+.footer-copy {
+  
+  font-size: 14px;
+}
+/* Responsividad */
+@media (max-width: 1024px) {
+  .footer{
+    height: 380px;
+  }
+  .container{
+    width: 100%;
+    height: 89%;
+  }
+  .footer-logo{
+    width: 40%;
+    padding-left: 40px;
+  }
+  .footer-copy{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    padding: 0;
+  }
+  /*ubicacion*/
+  .ubicacion-layout{
+    flex-direction: column;
+  }
+  iframe {
+    display: block; /* Asegúrate de que sea un bloque adaptable */
+    max-width: 100%; /* Limita el ancho máximo al contenedor */
+    height: auto; /* Ajusta la altura proporcionalmente */
+    aspect-ratio: 16 / 9; /* Mantén la relación de aspecto */
+    border: 0; /* Opcional: elimina el borde */
+}
+}
+@media (max-width: 570px){
+  /*footer*/
+  .footer{
+    width: 100%;
+    height: 600px;
+  }
+  .container{
+    width: 100%;
+    height: 89%;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .footer-logo{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+  }
+  .footer-text{
+    padding-top: 30px;
+    height: 65%;
+    justify-content: center;
+    position:relative
+  }
+  .footer-copy{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    padding: 0;
+  }
+}
+
+
+
+
+
+/* ------------------- SECCIÓN “NUESTRA SUCURSAL” ------------------- */
+.sucursal-container {
+  text-align: center;
+  padding: 10px 0;
+  font-family: 'Anton', sans-serif;
+}
+
+.cartel-sucursal {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  font-size: 50px;
+  color: #000;
+  font-family: 'Anton', sans-serif;
+  border-radius: 0;
+  margin: 55px 0;
+}
+
+.imagen-sucursal {
+  width: 100vw;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  border-radius: 35px;
+  padding: 20px;
+  
+}
+
+/* ------------------- SECCIÓN “UBICACIÓN” ------------------- */
+/* Estructura horizontal del título y mapa */
+.ubicacion-container {
+  background-color: #CACACA;
+;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+.ubicacion-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 1200px; /* Ajusta el tamaño máximo del contenedor */
+  gap: 20px;
+  flex-direction: column;
+
+}
+
+/* Título de la ubicación */
+.ubicacion-title {
+  font-size: 50px;
+  color: #000000;
+  font-family: 'Anton', sans-serif;
+  margin: 0;
+  flex: 0 0 auto; /* Evita que el título se redimensione */
+  text-align: left;
+  flex-direction: column;
+}
+
+/* Mapa interactivo más horizontal */
+
+.ubicacion-map iframe {
+  width: 672px;
+  height: 300px;
+  border-radius: 15px;
+}
+
+/* Contenedor de la dirección con el logo */
+.ubicacion-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Imagen del logo en la dirección */
+.ubicacion-icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* Texto de la dirección */
+.ubicacion-text {
+  font-size: 27px;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 0px;
+}
+/* ------------------- SECCIÓN “NUESTRAS SALAS DE ENTRENAMIENTO” ------------------- */
+.cartel-salas {
+    background-color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 50px;
+    color: #000;
+    font-family: 'Anton', sans-serif;
+    border-radius: 0;
+    margin-bottom: 55px;
+}
+
+.sala {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.sala img {
+  width: 100%;        /* se adapta al ancho disponible */
+  height: auto;       /* mantiene proporción */
+  display: block;     /* evita espacios en blanco */
+  object-fit: cover;  /* rellena sin deformar */
+}
+
+
+.imagen-sala {
+    width: 100%;           /* que ocupe todo el ancho disponible */
+    height: auto;          /* que ajuste la altura según la imagen */
+    border-radius: 0;
+    display: block;        /* evita comportamientos extraños de flex */
+    object-fit: cover;     /* recorta si es necesario para llenar el contenedor */
+}
+
+.cartel-superpuesto {
+    position: absolute;
+    bottom: 10px;   /* Separación de la parte inferior */
+    right: 10px;    /* Separación del lado derecho */
+    background-color: black;
+    color: white;
+    font-family: 'Anton', sans-serif;
+    font-size: 14px;
+    padding: 5px 12px;
+    border-radius: 5px 0 0 0; /* Redondeo solo en la esquina superior izquierda */
+}
+
+
+.sala p {
+    font-size: 18px;
+    color: #000;
+    font-family: 'Anton', sans-serif;
+    margin-top: 5px;
+}
+
+
+/* ------------------- FORMULARIO ------------------- */
+.formulario-container {
+  width:100%;
+  max-width: 2000px;
+  height: 100%;
+  margin: 0px;
+  padding: 100px 200px 100px 200px;
+  background-color: #CACACA;
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-titulo {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.formulario-grupo {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.formulario-grupo input,
+.formulario-grupo-mensaje textarea {
+  width: 100%;
+  padding: 18px;
+  border: 1px solid #2c2b2b;
+  border-radius: 6px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  resize: none;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  height: 150px;
+}
+
+.formulario-boton {
+  display: block;
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #3B3B40;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.formulario-boton:hover {
+  background-color: #b30000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .formulario-grupo {
+    flex-direction: column;
+  }
+  .formulario-container {
+    max-width: 100%;
+    padding: 20px;
+  }
+  .formulario-titulo {
+    font-size: 28px;
+  }
+  .formulario-boton {
+    width: 100%;
+  }
+}
