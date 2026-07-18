@@ -1,6 +1,12 @@
 /* Para la versión móvil (responsive), el logo estará centrado */
  /* ------------------- NAVBAR ------------------- */
-    .navbar {
+  html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+ .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -88,25 +94,40 @@
       transform: scaleX(5); /* La línea crece hasta su ancho completo */
     }
     }
-h1 { 
-  font-size: 70px;
+.titulo { 
+  font-size: calc(1.375rem + 1.5vw 6.18px);
   color: #000000; /* Color negro sólido para el título */
   text-align: center; 
   font-family: 'Anton', sans-serif;
-  margin-top: 100px; /* Menor separación con la navbar */
-  margin-bottom: 100px; /* Separación ligera con los elementos de abajo */
+  margin-top: 55px; /* Menor separación con la navbar */
+  margin-bottom: 55px; /* Separación ligera con los elementos de abajo */
 }
 /* Ajuste del carrusel */
+/* --- CONFIGURACIÓN GENERAL (Para todos los dispositivos) --- */
 .carousel-inner {
-  height: 600px;
+  width: 100%;
 }
 
 .carousel-inner img {
-  width: 100%;          
-  height: 100%;         
-  object-fit: cover;    
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: auto; /* En celulares se adapta proporcionalmente */
+  object-fit: cover; /* Evita que la imagen se estire o se deforme */
 }
 
+/* --- CONFIGURACIÓN PARA ESCRITORIO (Pantallas grandes) --- */
+@media (min-width: 992px) {
+  .carousel-inner img {
+    /* Define la altura fija que quieras para tu carrusel en PC */
+    height: 550px; 
+    
+    /* Centra la imagen para que al recortarse muestre lo más importante */
+    object-position: center; 
+  }
+  .custom-caption h5 {
+    font-size: 1rem; /* Letra grande y vistosa para escritorio */
+    letter-spacing: 1px;
+  }
+}
 /* Estilo del botón */
 #mi-boton button {
   background-color: #71BBD9;  
@@ -284,6 +305,10 @@ h1 {
 }
 /* Responsividad */
 @media (max-width: 1024px) {
+  html, body {
+    width:100%;
+    overflow-x:hidden;
+  }
   .footer{
     height: 380px;
   }
@@ -307,13 +332,16 @@ h1 {
   .ubicacion-layout{
     flex-direction: column;
   }
-  iframe {
-    display: block; /* Asegúrate de que sea un bloque adaptable */
-    max-width: 100%; /* Limita el ancho máximo al contenedor */
-    height: auto; /* Ajusta la altura proporcionalmente */
-    aspect-ratio: 16 / 9; /* Mantén la relación de aspecto */
-    border: 0; /* Opcional: elimina el borde */
-}
+  iframe 
+    {
+      display: block; /* Asegúrate de que sea un bloque adaptable */
+      max-width: 100%; /* Limita el ancho máximo al contenedor */
+      height: auto; /* Ajusta la altura proporcionalmente */
+      aspect-ratio: 16 / 9; /* Mantén la relación de aspecto */
+      border: 0; /* Opcional: elimina el borde */
+    }
+
+
 }
 @media (max-width: 480px){
   /*footer*/

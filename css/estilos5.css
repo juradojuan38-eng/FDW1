@@ -74,6 +74,7 @@
 
     /* Logo en pantallas grandes */
     @media (min-width: 992px) {
+    
       .logo-container {
         justify-content: flex-start;
         padding-left: 15px;
@@ -218,6 +219,10 @@
 }
 /* Responsividad */
 @media (max-width: 1024px) {
+  html, body {
+    width:100%;
+    overflow-x:hidden;
+  }
   .footer{
     height: 380px;
   }

@@ -70,6 +70,7 @@
 
     /* Logo en pantallas grandes */
     @media (min-width: 992px) {
+      
       .logo-container {
         justify-content: flex-start;
         padding-left: 15px;
@@ -200,8 +201,12 @@ p {
 
   /* Reducir tamaño de la imagen */
   .imagen-cuadro {
-    width: 80%;
-    height: 200px;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    height: 230px;
     margin-right: 0;
     margin-bottom: 20px;
   }
@@ -330,6 +335,10 @@ p {
 }
 /* Responsividad */
 @media (max-width: 1024px) {
+  html, body {
+    width:100%;
+    overflow-x:hidden;
+  }
   .footer{
     height: 380px;
   }

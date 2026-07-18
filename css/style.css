@@ -89,12 +89,10 @@ html, body {
     }
     @media (max-width:576px ){
       .navbar a::after{
-      left: 1px; /* Ajuste para que la línea empiece donde termina el padding izquierdo */
-      right: 5px;
+        left: 0;
+        width: 300px;   /* largo fijo */
+        right: auto;
       }
-      .navbar a:hover::after {
-      transform: scaleX(5); /* La línea crece hasta su ancho completo */
-    }
     }
 
 
@@ -216,72 +214,158 @@ html, body {
   font-size: 14px;
 }
 /* Responsividad */
-@media (max-width: 1024px) {
-  .footer{
-    height: 380px;
+@media (max-width:1024px){
+
+  html, body {
+    width:100%;
+    overflow-x:hidden;
   }
+
+  .imagen-sucursal{
+    width:100% !important;
+  }
+
+
+  /* Footer columnas en vertical */
+  .footer .row{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+
+
   .container{
-    width: 100%;
-    height: 89%;
+    width:100%;
+    height:89%;
   }
+
+
   .footer-logo{
-    width: 40%;
-    padding-left: 40px;
+    width:100%;
+    display:flex;
+    justify-content:center;
   }
+
+
   .footer-copy{
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10%;
-    padding: 0;
+    margin:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:10%;
+    padding:0;
   }
-  /*ubicacion*/
+
+
+  /* Ubicación */
   .ubicacion-layout{
-    flex-direction: column;
+    flex-direction:column;
   }
-  iframe {
-    display: block; /* Asegúrate de que sea un bloque adaptable */
-    max-width: 100%; /* Limita el ancho máximo al contenedor */
-    height: auto; /* Ajusta la altura proporcionalmente */
-    aspect-ratio: 16 / 9; /* Mantén la relación de aspecto */
-    border: 0; /* Opcional: elimina el borde */
+
+
+  iframe{
+    display:block;
+    max-width:100%;
+    height:auto;
+    aspect-ratio:16 / 9;
+    border:0;
+  }
+
+}
+
+
+
+/* Celulares */
+@media (max-width:570px){
+
+    /* Footer */
+    .footer .container{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+    }
+
+    /* Logo */
+    .footer-logo{
+        display:flex;
+        justify-content:center;
+        margin-bottom:20px;
+    }
+
+    .footer-img{
+        width:120px;
+        height:auto;
+    }
+
+    /* Texto */
+    .footer-text{
+        padding:0 20px;
+        margin-bottom:20px;
+    }
+
+    .footer-text p{
+        font-size:18px;
+        line-height:1.5;
+        margin:0;
+    }
+
+    /* ===== REDES SOCIALES ===== */
+
+    /* Columna donde están las redes */
+    .footer .col:last-child{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:15px;
+        margin-top:20px;
+    }
+
+    /* Las dos filas */
+    .footer .col:last-child > .row{
+        width:auto !important;
+        height:auto !important;
+        margin:0 !important;
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+    }
+
+    /* Elimina el margin-top inline de Instagram y LinkedIn */
+
+    /* Copyright */
+    .footer-copy{
+        margin-top:20px;
+        text-align:center;
+        font-size:14px;
+        padding:0 10px;
+    }
+
+.footer .social-icons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+   
+
+}
+
+.footer .col:last-child > .row{
+    width:auto !important;
+    height:auto !important;
+    margin:0 !important; display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    gap:20px; /* separación entre iconos */
 }
 }
-@media (max-width: 570px){
-  /*footer*/
-  .footer{
-    width: 100%;
-    height: 600px;
-  }
-  .container{
-    width: 100%;
-    height: 89%;
-    display: flex;
-    flex-direction: column;
-    
-  }
-  .footer-logo{
-    width: 100%;
-    height: 35%;
-    display: flex;
-    justify-content: center;
-  }
-  .footer-text{
-    padding-top: 30px;
-    height: 65%;
-    justify-content: center;
-    position:relative
-  }
-  .footer-copy{
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10%;
-    padding: 0;
-  }
-}
+
+
+
 
 
 

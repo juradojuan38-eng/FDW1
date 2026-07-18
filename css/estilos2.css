@@ -347,6 +347,10 @@ h2{
 }
 /* Responsividad */
 @media (max-width: 1024px) {
+  html, body {
+    width:100%;
+    overflow-x:hidden;
+  }
   .footer{
     height: 380px;
   }
