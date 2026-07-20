@@ -1,13 +1,18 @@
-/* ------------------- RESET & FUENTE ------------------- */
+/*======================================================
+                    RESET GENERAL
+======================================================*/
+/* Fuente utilizada en el sitio */
 @import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
-
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Reinicio de márgenes, rellenos y modelo de caja */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-
-    /* ------------------- NAVBAR ------------------- */
+/*======================================================
+                    BARRA DE NAVEGACIÓN
+======================================================*/
+/* Contenedor principal de la barra */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -17,7 +22,7 @@ html, body {
       font-family: 'Anton', sans-serif;
       padding: 0px 25px;
     }
-    
+/* Enlaces del menú */
     .navbar a {
       text-decoration: none;
       color: white !important;
@@ -27,12 +32,12 @@ html, body {
       position: relative; 
       display: inline-block;
     }
-
+/* Mantiene el color al pasar el cursor */
     .navbar a:hover {
       color: white !important;
     }
 
-    /* El pseudo-elemento que será la línea */
+/* Línea animada debajo de cada enlace */
     .navbar a::after {
       content: '';
       position: absolute;
@@ -46,47 +51,51 @@ html, body {
       transition: transform 0.3s ease;
     }
     
-    /* Efecto hover: la línea blanca aparece al pasar el mouse */
+/* Animación de la línea */
     .navbar a:hover::after {
       transform: scaleX(1); /* La línea crece hasta su ancho completo */
     }
-
+/* Evita interacción sobre el logo */
     .navbar .navbar-brand img {
       pointer-events: none;
     }
 
-    
+/* Línea amarilla debajo del navbar */   
     .linea {
       width: 100%;        /* largo */
       height: 18px;        /* grosor */
       background: #FCDA00;  /* color */
     }
-
-
-
+/* Botón del menú responsive */
     .navbar-toggler {
       margin-top: -90px;
     }
 
-    /* Logo container */
+/* Contenedor del logo */
     .logo-container {
       display: flex;
       justify-content: center;
       width: 100%;
     }
-
+/* Imagen del logo */
     .navbar .logo-container img {
       max-width: 100px;
       height: auto;
     }
 
-    /* Logo en pantallas grandes */
+/*======================================================
+            LOGO EN ESCRITORIO
+======================================================*/
     @media (min-width: 992px) {
       .logo-container {
         justify-content: flex-start;
         padding-left: 15px;
       }
     }
+
+/*======================================================
+              AJUSTE DEL MENÚ EN CELULARES
+======================================================*/
     @media (max-width:576px ){
       .navbar a::after{
         left: 0;
@@ -97,7 +106,10 @@ html, body {
 
 
 
-/* ------------------- FOOTER ------------------- */
+/*======================================================
+                        FOOTER
+======================================================*/
+/* Contenedor principal */
 .footer {
   background-color: #000;
   color: #fff;
@@ -108,60 +120,40 @@ html, body {
   align-items: center;
   padding-top: 40px;
 }
-
-.container {
+/* Contenedor interno */
+.footer.container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
-
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; /* Responsivo */
-  gap: 15px;
-  text-align: left;
-}
-
-.footer-logo-container {
-  flex: 12;
-  padding-left: 30px; /* Mueve el logo ligeramente */
-}
+/* Logo */
 .footer-logo {
   flex: 1;
   display: flex;
   justify-content: center;
 }
+/* Imagen del logo */
 .footer-img {
   width: 150px;
   height: 150px;
 }
-
+/* Texto descriptivo */
 .footer-text {
   flex: 2;
   font-size: 16px;
   line-height: 1.6;
   
 }
-
-.footer-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
+/* Párrafo del footer */
 .footer-text p {
   font-size: 18px;
   margin: 0px 0;
   line-height: 1.6;
   padding-bottom: 30px;
 }
-
+/* Contenedor de redes sociales */
 .social-icons {
   width: 40px;
   height: 40px;
@@ -170,63 +162,38 @@ html, body {
   gap: 50px;
   margin-top: 15px;
 }
-
-
-.social-icons .social-icon {
-  width: 40px;
-  height: 40px;
-  transition: opacity 0.3s;
-}
-
+/* Iconos */
 .social-icons img {
   width: 40px;
   height: 40px;
   padding: 0; /* Asegúrate de que no haya padding adicional */
   filter: grayscale(100%);
 }
+/* Efecto hover */
 .social-icons img:hover{
   filter: sepia(100%);
 }
-.social-icons-img-facebook,
-.social-icons-img-Twi,
-.social-icons-img-Ins {
-  padding-right: 0; /* Elimina cualquier padding adicional */
-}
-
-
-.social-icons .social-icon:hover {
-  opacity: 0.7;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 30px solid #0d75d3;
-}
-
-.footer-bottom p {
-  margin: 5px 0;
-}
-
+/* Texto de derechos */
 .footer-copy {
-  
   font-size: 14px;
+  padding-bottom: 20px;
+  margin-top: 0px;
 }
-/* Responsividad */
+
+/*======================================================
+                RESPONSIVE TABLET
+                (Hasta 1024px)
+======================================================*/
 @media (max-width:1024px){
 
   html, body {
     width:100%;
     overflow-x:hidden;
   }
-
   .imagen-sucursal{
     width:100% !important;
   }
-
-
-  /* Footer columnas en vertical */
+ /* Footer en columna */
   .footer .row{
     display:flex;
     flex-direction:column;
@@ -234,21 +201,15 @@ html, body {
     justify-content:center;
     text-align:center;
   }
-
-
   .container{
     width:100%;
     height:89%;
   }
-
-
   .footer-logo{
     width:100%;
     display:flex;
     justify-content:center;
   }
-
-
   .footer-copy{
     margin:0;
     display:flex;
@@ -257,14 +218,10 @@ html, body {
     height:10%;
     padding:0;
   }
-
-
-  /* Ubicación */
+/* Sección ubicación */
   .ubicacion-layout{
     flex-direction:column;
   }
-
-
   iframe{
     display:block;
     max-width:100%;
@@ -275,8 +232,10 @@ html, body {
 
 }
 
-
-
+/*======================================================
+                RESPONSIVE CELULARES
+                (Hasta 570px)
+======================================================*/
 /* Celulares */
 @media (max-width:570px){
 
@@ -288,7 +247,6 @@ html, body {
         justify-content:center;
         text-align:center;
     }
-
     /* Logo */
     .footer-logo{
         display:flex;
@@ -303,8 +261,8 @@ html, body {
 
     /* Texto */
     .footer-text{
-        padding:0 20px;
-        margin-bottom:20px;
+        padding:0 0px;
+        margin-bottom:0px;
     }
 
     .footer-text p{
@@ -313,9 +271,9 @@ html, body {
         margin:0;
     }
 
-    /* ===== REDES SOCIALES ===== */
+/* ===== REDES SOCIALES ===== */
 
-    /* Columna donde están las redes */
+/* Contenedor de los iconos de redes sociales */
     .footer .col:last-child{
         display:flex;
         justify-content:center;
@@ -324,7 +282,7 @@ html, body {
         margin-top:20px;
     }
 
-    /* Las dos filas */
+/* Organización de las filas de redes sociales */
     .footer .col:last-child > .row{
         width:auto !important;
         height:auto !important;
@@ -334,50 +292,51 @@ html, body {
         justify-content:center;
         align-items:center;
     }
-
-    /* Elimina el margin-top inline de Instagram y LinkedIn */
-
-    /* Copyright */
+/* Texto de derechos de autor */
     .footer-copy{
         margin-top:20px;
         text-align:center;
         font-size:14px;
         padding:0 10px;
     }
+  .footer .col.social-icons{
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+  }
 
-.footer .social-icons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-   
+/* Espaciado de los iconos */
+/* Facebook */
+  .footer .social-icons img[alt="Facebook"]{
+      margin-right: 10px;   /* aumenta o disminuye */
+  }
+  /* Twitter */
+  .footer .social-icons img[alt="Twitter"]{
+      margin-left: 10px;
+  }
+  /* Instagram */
+  .footer .social-icons img[alt="Instagram"]{
+      margin-right: 10px;
+  }
+  /* LinkedIn */
+  .footer .social-icons img[alt="LinkedIn"]{
+      margin-left: 10px;
+  }
+  }
 
-}
-
-.footer .col:last-child > .row{
-    width:auto !important;
-    height:auto !important;
-    margin:0 !important; display:flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
-    gap:20px; /* separación entre iconos */
-}
-}
-
-
-
-
-
-
-
-
-/* ------------------- SECCIÓN “NUESTRA SUCURSAL” ------------------- */
+/*======================================================
+                SECCIÓN NUESTRA SUCURSAL
+======================================================*/
+/* Contenedor principal */
 .sucursal-container {
   text-align: center;
   padding: 10px 0;
   font-family: 'Anton', sans-serif;
 }
-
+/* Título de la sección */
 .cartel-sucursal {
   background-color: #ffffff;
   text-align: center;
@@ -388,7 +347,7 @@ html, body {
   border-radius: 0;
   margin: 55px 0;
 }
-
+/* Imagen principal de la sucursal */
 .imagen-sucursal {
   width: 100vw;
   max-width: 100%;
@@ -399,18 +358,19 @@ html, body {
   padding: 20px;
   
 }
-
-/* ------------------- SECCIÓN “UBICACIÓN” ------------------- */
-/* Estructura horizontal del título y mapa */
+/*======================================================
+                    SECCIÓN UBICACIÓN
+======================================================*/
+/* Contenedor principal */
 .ubicacion-container {
   background-color: #CACACA;
-;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   text-align: center;
 }
+/* Distribución del contenido */
 .ubicacion-layout {
   display: flex;
   align-items: center;
@@ -419,10 +379,8 @@ html, body {
   max-width: 1200px; /* Ajusta el tamaño máximo del contenedor */
   gap: 20px;
   flex-direction: column;
-
 }
-
-/* Título de la ubicación */
+/* Título */
 .ubicacion-title {
   font-size: 50px;
   color: #000000;
@@ -432,29 +390,24 @@ html, body {
   text-align: left;
   flex-direction: column;
 }
-
-/* Mapa interactivo más horizontal */
-
+/* Mapa */
 .ubicacion-map iframe {
   width: 672px;
   height: 300px;
   border-radius: 15px;
 }
-
-/* Contenedor de la dirección con el logo */
+/* Dirección */
 .ubicacion-info {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-top: 20px;
 }
-
-/* Imagen del logo en la dirección */
+/* Ícono de ubicación */
 .ubicacion-icon {
   width: 50px;
   height: 50px;
 }
-
 /* Texto de la dirección */
 .ubicacion-text {
   font-size: 27px;
@@ -462,7 +415,10 @@ html, body {
   font-family: 'Roboto', sans-serif;
   margin-bottom: 0px;
 }
-/* ------------------- SECCIÓN “NUESTRAS SALAS DE ENTRENAMIENTO” ------------------- */
+/*======================================================
+            SECCIÓN SALAS DE ENTRENAMIENTO
+======================================================*/
+/* Título */
 .cartel-salas {
     background-color: #fff;
     text-align: center;
@@ -473,20 +429,12 @@ html, body {
     border-radius: 0;
     margin-bottom: 55px;
 }
-
+/* Contenedor de cada sala */
 .sala {
   position: relative;
   margin-bottom: 0;
 }
-
-.sala img {
-  width: 100%;        /* se adapta al ancho disponible */
-  height: auto;       /* mantiene proporción */
-  display: block;     /* evita espacios en blanco */
-  object-fit: cover;  /* rellena sin deformar */
-}
-
-
+/* Imagen de la sala */
 .imagen-sala {
     width: 100%;           /* que ocupe todo el ancho disponible */
     height: auto;          /* que ajuste la altura según la imagen */
@@ -494,7 +442,7 @@ html, body {
     display: block;        /* evita comportamientos extraños de flex */
     object-fit: cover;     /* recorta si es necesario para llenar el contenedor */
 }
-
+/* Cartel superpuesto */
 .cartel-superpuesto {
     position: absolute;
     bottom: 10px;   /* Separación de la parte inferior */
@@ -506,17 +454,16 @@ html, body {
     padding: 5px 12px;
     border-radius: 5px 0 0 0; /* Redondeo solo en la esquina superior izquierda */
 }
-
-
+/* Texto debajo de la imagen */
 .sala p {
     font-size: 18px;
     color: #000;
     font-family: 'Anton', sans-serif;
     margin-top: 5px;
 }
-
-
-/* ------------------- FORMULARIO ------------------- */
+/*======================================================
+                FORMULARIO DE CONTACTO
+======================================================*/
 .formulario-container {
   width:100%;
   max-width: 2000px;
@@ -528,24 +475,24 @@ html, body {
   font-family: 'Anton', sans-serif;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
+/* Contenedor principal del formulario */
 .formulario-titulo {
   font-size: 36px;
   margin-bottom: 40px;
 }
-
+/* Título del formulario */
 .formulario-contacto {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
-
+/* Agrupación de los campos */
 .formulario-grupo {
   display: flex;
   gap: 20px;
   margin-bottom: 15px;
 }
-
+/* Campos de entrada y área de mensaje */
 .formulario-grupo input,
 .formulario-grupo-mensaje textarea {
   width: 100%;
@@ -557,11 +504,11 @@ html, body {
   resize: none;
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
+/* Área de mensaje */
 textarea {
   height: 150px;
 }
-
+/* Botón de envío */
 .formulario-boton {
   display: block;
   width: 100%;
@@ -574,23 +521,29 @@ textarea {
   border-radius: 5px;
   cursor: pointer;
 }
-
+/* Efecto al pasar el cursor sobre el botón */
 .formulario-boton:hover {
   background-color: #b30000;
 }
-
-/* Responsive */
+/*======================================================
+            RESPONSIVE DEL FORMULARIO
+                (Hasta 768px)
+======================================================*/
 @media (max-width: 768px) {
+/* Los campos pasan a mostrarse uno debajo del otro */
   .formulario-grupo {
     flex-direction: column;
   }
+/* Ajuste del contenedor */
   .formulario-container {
     max-width: 100%;
     padding: 20px;
   }
+/* Reducción del tamaño del título */
   .formulario-titulo {
     font-size: 28px;
   }
+/* El botón ocupa todo el ancho */
   .formulario-boton {
     width: 100%;
   }

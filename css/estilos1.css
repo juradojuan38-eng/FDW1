@@ -87,12 +87,10 @@
     }
     @media (max-width:576px ){
       .navbar a::after{
-      left: 1px; /* Ajuste para que la línea empiece donde termina el padding izquierdo */
-      right: 5px;
+        left: 0;
+        width: 300px;   /* largo fijo */
+        right: auto;
       }
-      .navbar a:hover::after {
-      transform: scaleX(5); /* La línea crece hasta su ancho completo */
-    }
     }
 .titulo { 
   font-size: calc(1.375rem + 1.5vw 6.18px);
@@ -309,38 +307,58 @@
     width:100%;
     overflow-x:hidden;
   }
-  .footer{
-    height: 380px;
-  }
-  .container{
-    width: 100%;
-    height: 89%;
-  }
-  .footer-logo{
-    width: 40%;
-    padding-top: 20px;
-  }
-  .footer-copy{
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10%;
-    padding: 0;
-  }
-  /*ubicacion*/
-  .ubicacion-layout{
-    flex-direction: column;
-  }
-  iframe 
-    {
-      display: block; /* Asegúrate de que sea un bloque adaptable */
-      max-width: 100%; /* Limita el ancho máximo al contenedor */
-      height: auto; /* Ajusta la altura proporcionalmente */
-      aspect-ratio: 16 / 9; /* Mantén la relación de aspecto */
-      border: 0; /* Opcional: elimina el borde */
-    }
 
+  .imagen-sucursal{
+    width:100% !important;
+  }
+
+
+  /* Footer columnas en vertical */
+  .footer .row{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+
+
+  .container{
+    width:100%;
+    height:89%;
+  }
+
+
+  .footer-logo{
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+
+
+  .footer-copy{
+    margin:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:10%;
+    padding:0;
+  }
+
+
+  /* Ubicación */
+  .ubicacion-layout{
+    flex-direction:column;
+  }
+
+
+  iframe{
+    display:block;
+    max-width:100%;
+    height:auto;
+    aspect-ratio:16 / 9;
+    border:0;
+  }
 
 }
 @media (max-width: 480px){
@@ -384,4 +402,107 @@
     margin-top: 20px;  /* Menos separación en pantallas pequeñas */
     margin-bottom: 20px; /* Menos separación con los elementos debajo */
   }
+}
+
+@media (max-width:570px){
+
+    /* Footer */
+    .footer .container{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+    }
+
+    /* Logo */
+    .footer-logo{
+        display:flex;
+        justify-content:center;
+        margin-bottom:20px;
+    }
+
+    .footer-img{
+        width:120px;
+        height:auto;
+    }
+
+    /* Texto */
+    .footer-text{
+        padding:0 0px;
+        margin-bottom:0px;
+    }
+
+    .footer-text p{
+        font-size:18px;
+        line-height:1.5;
+        margin:0;
+    }
+
+    /* ===== REDES SOCIALES ===== */
+
+    /* Columna donde están las redes */
+    .footer .col:last-child{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:15px;
+        margin-top:20px;
+    }
+
+    /* Las dos filas */
+    .footer .col:last-child > .row{
+        width:auto !important;
+        height:auto !important;
+        margin:0 !important;
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+    }
+
+    /* Elimina el margin-top inline de Instagram y LinkedIn */
+
+    /* Copyright */
+    .footer-copy{
+        margin-top:20px;
+        text-align:center;
+        font-size:14px;
+        padding:0 10px;
+    }
+
+.footer .col.social-icons{
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+}
+
+/* Facebook */
+.footer .social-icons img[alt="Facebook"]{
+    margin-right: 10px;   /* aumenta o disminuye */
+}
+
+/* Twitter */
+.footer .social-icons img[alt="Twitter"]{
+    margin-left: 10px;
+}
+
+/* Instagram */
+.footer .social-icons img[alt="Instagram"]{
+    margin-right: 10px;
+}
+
+/* LinkedIn */
+.footer .social-icons img[alt="LinkedIn"]{
+    margin-left: 10px;
+}
+}
+
+.footer-copy{
+  padding-bottom: 20px;
+  margin-top: 0px;
 }
