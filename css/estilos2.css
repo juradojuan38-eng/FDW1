@@ -262,7 +262,7 @@ h2{
   padding-top: 40px;
 }
 /* Contenedor interno */
-.footer.container {
+.footer .container {
   width: 100%;
   display: flex;
   align-items: center;
@@ -296,12 +296,13 @@ h2{
 }
 /* Contenedor de redes sociales */
 .social-icons {
-  width: 40px;
+  width: auto;
   height: 40px;
   display: flex;
   justify-content: center;
   gap: 50px;
   margin-top: 15px;
+  flex: 0 0 auto;
 }
 /* Iconos */
 .social-icons img {
@@ -320,7 +321,6 @@ h2{
   padding-bottom: 20px;
   margin-top: 0px;
 }
-
 
 
 @media (max-width: 1024px) {
@@ -417,7 +417,7 @@ h2{
     }
 
 /* Organización de las filas de redes sociales */
-    .footer .col:last-child > .row{
+    .footer .col:last-child  .row{
         width:auto !important;
         height:auto !important;
         margin:0 !important;
@@ -431,7 +431,7 @@ h2{
         margin-top:20px;
         text-align:center;
         font-size:14px;
-        padding:0 10px;
+        padding-bottom:15px;
     }
   .footer .col.social-icons{
     margin-top: 0 !important;
@@ -439,38 +439,40 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 25px;
+    padding: 20px;
+    
   }
-
+ 
 /* Espaciado de los iconos */
 /* Facebook */
   .footer .social-icons img[alt="Facebook"]{
-      margin-right: 10px;   /* aumenta o disminuye */
+      margin-right: 0px;   /* aumenta o disminuye */
   }
   /* Twitter */
   .footer .social-icons img[alt="Twitter"]{
-      margin-left: 10px;
+      margin-left: 0px;
   }
   /* Instagram */
   .footer .social-icons img[alt="Instagram"]{
-      margin-right: 10px;
+      margin-left: -20px;
   }
   /* LinkedIn */
   .footer .social-icons img[alt="LinkedIn"]{
-      margin-left: 10px;
+      margin-left: 0px;
   }
-  }
-
-
-
-
-
-
-/* Para pantallas pequeñas */
-@media (max-width: 768px) {
-  h1 {
-    margin-top: 20px;  /* Menos separación en pantallas pequeñas */
-    margin-bottom: 20px; /* Menos separación con los elementos debajo */
-  }
+/* Centra los dos iconos de cada fila */
+.footer .col:last-child .row .col{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-right:0px;
+    
+    
 }
-
+/* Iconos */
+.social-icons img{
+    width:40px;
+    height:40px;
+    display:block;
+}
+  }
