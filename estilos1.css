@@ -1,0 +1,404 @@
+/* Para la versión móvil (responsive), el logo estará centrado */
+ /* ------------------- NAVBAR ------------------- */
+  html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+ .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #E30E1E;
+      font-size: 24px;
+      font-family: 'Anton', sans-serif;
+      padding: 0px 25px;
+    }
+    
+    .navbar a {
+      text-decoration: none;
+      color: white !important;
+      padding: 10px 15px 3px; 
+      margin-right: 38px;
+      transition: color 0.3s;
+      position: relative; 
+      display: inline-block;
+    }
+
+    .navbar a:hover {
+      color: white !important;
+    }
+
+    /* El pseudo-elemento que será la línea */
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      left: 9px; /* Ajuste para que la línea empiece donde termina el padding izquierdo */
+      right: 9px; /* Ajuste para que la línea termine donde empieza el padding derecho */
+      bottom: 0;
+      height: 6px;
+      background-color: white;
+      transform: scaleX(0); 
+      transform-origin: left; /* Animación desde la izquierda */
+      transition: transform 0.3s ease;
+    }
+    
+    /* Efecto hover: la línea blanca aparece al pasar el mouse */
+    .navbar a:hover::after {
+      transform: scaleX(1); /* La línea crece hasta su ancho completo */
+    }
+
+    .navbar .navbar-brand img {
+      pointer-events: none;
+    }
+
+    
+    .linea {
+      width: 100%;        /* largo */
+      height: 18px;        /* grosor */
+      background: #FCDA00;  /* color */
+    }
+
+
+
+    .navbar-toggler {
+      margin-top: -90px;
+    }
+
+    /* Logo container */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .navbar .logo-container img {
+      max-width: 100px;
+      height: auto;
+    }
+
+    /* Logo en pantallas grandes */
+    @media (min-width: 992px) {
+      .logo-container {
+        justify-content: flex-start;
+        padding-left: 15px;
+      }
+    }
+    @media (max-width:576px ){
+      .navbar a::after{
+        left: 0;
+        width: 300px;   /* largo fijo */
+        right: auto;
+      }
+    }
+.titulo { 
+  font-size: calc(1.375rem + 1.5vw 6.18px);
+  color: #000000; /* Color negro sólido para el título */
+  text-align: center; 
+  font-family: 'Anton', sans-serif;
+  margin-top: 55px; /* Menor separación con la navbar */
+  margin-bottom: 55px; /* Separación ligera con los elementos de abajo */
+}
+/* Ajuste del carrusel */
+/* --- CONFIGURACIÓN GENERAL (Para todos los dispositivos) --- */
+.carousel-inner {
+  width: 100%;
+}
+
+.carousel-inner img {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: auto; /* En celulares se adapta proporcionalmente */
+  object-fit: cover; /* Evita que la imagen se estire o se deforme */
+}
+
+/* --- CONFIGURACIÓN PARA ESCRITORIO (Pantallas grandes) --- */
+@media (min-width: 992px) {
+  .carousel-inner img {
+    /* Define la altura fija que quieras para tu carrusel en PC */
+    height: 550px; 
+    
+    /* Centra la imagen para que al recortarse muestre lo más importante */
+    object-position: center; 
+  }
+  .custom-caption h5 {
+    font-size: 1rem; /* Letra grande y vistosa para escritorio */
+    letter-spacing: 1px;
+  }
+}
+/* Estilo del botón */
+#mi-boton button {
+  background-color: #71BBD9;  
+  color: #000000;                
+  padding: 20px 35px;        
+  border-radius: 10px;        
+  font-size: 25px;            
+  border: none;             
+  transition: background-color 0.3s ease;
+  font-family: 'Kaisei Tokumin', Kaisei Tokumin;
+  margin-top: 60px; /* Separar ligeramente el botón de los elementos arriba */
+  margin-bottom: 60px; /* Separar ligeramente el botón de los elementos abajo */
+  display: block; /* Asegura que el botón esté centrado */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#mi-boton button:hover {
+  background-color: #71BBD9;  
+}
+
+#mi-boton button:focus {
+  outline: none; 
+  box-shadow: 0 0 5px rgba(255, 193, 7, 0.8);
+}
+
+/* Ajuste del collapse */
+#collapseWidthExample {
+  left: 1000%;
+  min-height: 300px;
+  height: auto;
+  top: 50%;
+  font-family: 'Roboto', sans-serif; /* Cambia la fuente a Roboto */
+}
+
+#collapseWidthExample .card {
+  width: 80%; 
+}
+
+.icono {
+  width: 100px;      
+  height: 100px;  
+  object-fit: contain; 
+  display: block;   
+  margin-bottom: 25px;
+}
+
+/* Estilo de la tarjeta en el collapse */
+#collapseWidthExample .card-body {
+  display: flex;
+  padding: 45px;
+  font-size: 30px;
+  line-height: 1.4; 
+  color: #0d0d0e; 
+  background-color: #71BBD9; 
+  border-radius: 15px; 
+  font-family: 'Roboto', sans-serif; /* Cambia la fuente a Roboto también en el contenido del cartel */
+  margin-bottom: 30px;
+}
+/*======================================================
+                        FOOTER
+======================================================*/
+/* Contenedor principal */
+.footer {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+/* Contenedor interno */
+.footer.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+/* Logo */
+.footer-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+/* Imagen del logo */
+.footer-img {
+  width: 150px;
+  height: 150px;
+}
+/* Texto descriptivo */
+.footer-text {
+  flex: 2;
+  font-size: 16px;
+  line-height: 1.6;
+  
+}
+/* Párrafo del footer */
+.footer-text p {
+  font-size: 18px;
+  margin: 0px 0;
+  line-height: 1.6;
+  padding-bottom: 30px;
+}
+/* Contenedor de redes sociales */
+.social-icons {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 15px;
+}
+/* Iconos */
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  padding: 0; /* Asegúrate de que no haya padding adicional */
+  filter: grayscale(100%);
+}
+/* Efecto hover */
+.social-icons img:hover{
+  filter: sepia(100%);
+}
+/* Texto de derechos */
+.footer-copy {
+  font-size: 14px;
+  padding-bottom: 20px;
+  margin-top: 0px;
+}
+
+/* Responsividad */
+
+@media (max-width: 1024px) {
+  html, body {
+    width:100%;
+    overflow-x:hidden;
+  }
+  .footer > .container > .row{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+  .footer .container{
+    width: 100%;
+    height: 89%;
+  }
+  .footer-logo{
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+  .footer-copy{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    padding: 0;
+  }
+}
+/*======================================================
+                RESPONSIVE CELULARES
+                (Hasta 570px)
+======================================================*/
+/* Celulares */
+@media (max-width:570px){
+
+    /* Footer */
+    .footer .container{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+    }
+    /* Logo */
+    .footer-logo{
+        display:flex;
+        justify-content:center;
+        margin-bottom:20px;
+    }
+
+    .footer-img{
+        width:120px;
+        height:auto;
+    }
+
+    /* Texto */
+    .footer-text{
+        padding:0 0px;
+        margin-bottom:0px;
+    }
+
+    .footer-text p{
+        font-size:18px;
+        line-height:1.5;
+        margin:0;
+    }
+
+/* ===== REDES SOCIALES ===== */
+
+/* Contenedor de los iconos de redes sociales */
+    .footer .col:last-child{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:15px;
+        margin-top:20px;
+    }
+
+/* Organización de las filas de redes sociales */
+    .footer .col:last-child  .row{
+        width:auto !important;
+        height:auto !important;
+        margin:0 !important;
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+    }
+/* Texto de derechos de autor */
+    .footer-copy{
+        margin-top:20px;
+        text-align:center;
+        font-size:14px;
+        padding-bottom:15px;
+    }
+  .footer .col.social-icons{
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+  }
+ 
+/* Espaciado de los iconos */
+/* Facebook */
+  .footer .social-icons img[alt="Facebook"]{
+      margin-right: 0px;   /* aumenta o disminuye */
+  }
+  /* Twitter */
+  .footer .social-icons img[alt="Twitter"]{
+      margin-left: 0px;
+  }
+  /* Instagram */
+  .footer .social-icons img[alt="Instagram"]{
+      margin-left: -20px;
+  }
+  /* LinkedIn */
+  .footer .social-icons img[alt="LinkedIn"]{
+      margin-left: 0px;
+  }
+  
+/* Centra los dos iconos de cada fila */
+.footer .col:last-child .row .col{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-right:0px;
+    
+    
+}
+/* Iconos */
+.social-icons img{
+    width:40px;
+    height:40px;
+    display:block;
+}
+  }

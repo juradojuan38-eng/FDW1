@@ -1,0 +1,478 @@
+/*======================================================
+                    RESET GENERAL
+======================================================*/
+/* Fuente utilizada en el sitio */
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+/* Reinicio de márgenes, rellenos y modelo de caja */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+/*======================================================
+                    BARRA DE NAVEGACIÓN
+======================================================*/
+/* Contenedor principal de la barra */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #E30E1E;
+      font-size: 24px;
+      font-family: 'Anton', sans-serif;
+      padding: 0px 25px;
+    }
+/* Enlaces del menú */
+    .navbar a {
+      text-decoration: none;
+      color: white !important;
+      padding: 10px 15px 3px; 
+      margin-right: 38px;
+      transition: color 0.3s;
+      position: relative; 
+      display: inline-block;
+    }
+/* Mantiene el color al pasar el cursor */
+    .navbar a:hover {
+      color: white !important;
+    }
+
+/* Línea animada debajo de cada enlace */
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      left: 9px; /* Ajuste para que la línea empiece donde termina el padding izquierdo */
+      right: 9px; /* Ajuste para que la línea termine donde empieza el padding derecho */
+      bottom: 0;
+      height: 6px;
+      background-color: white;
+      transform: scaleX(0); 
+      transform-origin: left; /* Animación desde la izquierda */
+      transition: transform 0.3s ease;
+    }
+    
+/* Animación de la línea */
+    .navbar a:hover::after {
+      transform: scaleX(1); /* La línea crece hasta su ancho completo */
+    }
+/* Evita interacción sobre el logo */
+    .navbar .navbar-brand img {
+      pointer-events: none;
+    }
+
+/* Línea amarilla debajo del navbar */   
+    .linea {
+      width: 100%;        /* largo */
+      height: 18px;        /* grosor */
+      background: #FCDA00;  /* color */
+    }
+/* Botón del menú responsive */
+    .navbar-toggler {
+      margin-top: -90px;
+    }
+
+/* Contenedor del logo */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+/* Imagen del logo */
+    .navbar .logo-container img {
+      max-width: 100px;
+      height: auto;
+    }
+
+/*======================================================
+            LOGO EN ESCRITORIO
+======================================================*/
+    @media (min-width: 992px) {
+      .logo-container {
+        justify-content: flex-start;
+        padding-left: 15px;
+      }
+    }
+
+/*======================================================
+              AJUSTE DEL MENÚ EN CELULARES
+======================================================*/
+    @media (max-width:576px ){
+      .navbar a::after{
+        left: 0;
+        width: 300px;   /* largo fijo */
+        right: auto;
+      }
+    }
+
+
+body {
+  background-color: #FFFFFF; 
+}
+.cartel-sucursal {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  font-size: 50px;
+  color: #000000;
+  font-family: 'Anton', sans-serif;
+  border-radius: 0px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+section {
+  text-align: center; 
+}
+h2{
+   text-align: center;
+   font-size: 35px; 
+   font-family: 'Roboto', sans-serif;
+   margin-bottom: 55px;
+   padding-left: 50px;
+   padding-right:50px;
+}	
+.card-body {                   
+  display: flex;
+  flex-direction: column;  
+  justify-content: center; 
+  text-align: center;   
+  border-radius: 15px;   
+}
+
+/* Fondo oscuro para la tarjeta */
+.card {
+  width: 18rem;
+  height: 385px;
+  background-color: #2d2d32; /* gris oscuro */
+  border-radius: 10px; /* radios para toda la tarjeta */
+  overflow: hidden; /* para que el gris superior herede el radio */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  margin: 20px auto;
+  border: 0px solid #2d2d32;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 70px;
+}
+
+.card-title {
+  background-color: #d3d3d3; /* gris claro */
+  color: #000;
+  font-family: 'Anton', sans-serif;
+  font-size: 22px;
+  padding: 15px 0;
+  margin: 0;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  height: 80px;
+  padding-top: 30px;
+}
+
+.card-text {
+  font-size: 32px;
+  font-weight: bold;
+  
+}
+
+.card-body h6 {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #FFD500;
+  color: #000;
+  font-family: 'Anton', sans-serif;
+  font-size: 18px;
+  padding: 8px 20px;
+  border-radius: 30px;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #ffcc00;
+}
+.card-container1 {
+  display: flex; 
+  gap: 15px;
+  justify-content: space-around;
+}
+
+.card {
+  width: 18rem;
+}
+
+.card-container2 {
+  display: flex; 
+  gap: 15px; 
+  justify-content: space-around;
+}
+.card {
+  width: 18rem;
+}
+.last-card2 .card-body h6 {
+  font-size: 17px;
+}
+
+.last-card .card-body h6 {
+  font-size: 15px; 
+}
+/* Mantén la estructura original, ajustando solo la disposición en pantallas pequeñas */
+.card-container1, .card-container2 {
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en varias filas */
+}
+
+@media (max-width: 768px) {
+  .card-container1, .card-container2 {
+    justify-content: center; /* Centra las tarjetas en pantallas más pequeñas */
+  }
+
+  .card {
+    width: 90%; /* Las tarjetas ocupan el 90% del ancho del contenedor */
+    margin-bottom: 20px; /* Asegura separación entre tarjetas */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container1, .card-container2 {
+    flex-direction: column; /* Coloca las tarjetas en una columna */
+    align-items: center; /* Centra las tarjetas verticalmente */
+  }
+
+  .card {
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+  }
+}
+
+/*======================================================
+                        FOOTER
+======================================================*/
+/* Contenedor principal */
+.footer {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+/* Contenedor interno */
+.footer .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+/* Logo */
+.footer-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+/* Imagen del logo */
+.footer-img {
+  width: 150px;
+  height: 150px;
+}
+/* Texto descriptivo */
+.footer-text {
+  flex: 2;
+  font-size: 16px;
+  line-height: 1.6;
+  
+}
+/* Párrafo del footer */
+.footer-text p {
+  font-size: 18px;
+  margin: 0px 0;
+  line-height: 1.6;
+  padding-bottom: 30px;
+}
+/* Contenedor de redes sociales */
+.social-icons {
+  width: auto;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 15px;
+  flex: 0 0 auto;
+}
+/* Iconos */
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  padding: 0; /* Asegúrate de que no haya padding adicional */
+  filter: grayscale(100%);
+}
+/* Efecto hover */
+.social-icons img:hover{
+  filter: sepia(100%);
+}
+/* Texto de derechos */
+.footer-copy {
+  font-size: 14px;
+  padding-bottom: 20px;
+  margin-top: 0px;
+}
+
+
+@media (max-width: 1024px) {
+  html, body {
+    width:100%;
+    overflow-x:hidden;
+  }
+  /* Footer en columna */
+  .footer .row{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+  .container{
+    width: 100%;
+    height: 89%;
+  }
+  .footer-logo{
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+  .footer-copy{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    padding: 0;
+  }
+  /*ubicacion*/
+  .ubicacion-layout{
+    flex-direction: column;
+  }
+  iframe {
+    display: block; /* Asegúrate de que sea un bloque adaptable */
+    max-width: 100%; /* Limita el ancho máximo al contenedor */
+    height: auto; /* Ajusta la altura proporcionalmente */
+    aspect-ratio: 16 / 9; /* Mantén la relación de aspecto */
+    border: 0; /* Opcional: elimina el borde */
+}
+}
+
+/*======================================================
+                RESPONSIVE CELULARES
+                (Hasta 570px)
+======================================================*/
+/* Celulares */
+@media (max-width:570px){
+
+    /* Footer */
+    .footer .container{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+    }
+    /* Logo */
+    .footer-logo{
+        display:flex;
+        justify-content:center;
+        margin-bottom:20px;
+    }
+
+    .footer-img{
+        width:120px;
+        height:auto;
+    }
+
+    /* Texto */
+    .footer-text{
+        padding:0 0px;
+        margin-bottom:0px;
+    }
+
+    .footer-text p{
+        font-size:18px;
+        line-height:1.5;
+        margin:0;
+    }
+
+/* ===== REDES SOCIALES ===== */
+
+/* Contenedor de los iconos de redes sociales */
+    .footer .col:last-child{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:15px;
+        margin-top:20px;
+    }
+
+/* Organización de las filas de redes sociales */
+    .footer .col:last-child  .row{
+        width:auto !important;
+        height:auto !important;
+        margin:0 !important;
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+    }
+/* Texto de derechos de autor */
+    .footer-copy{
+        margin-top:20px;
+        text-align:center;
+        font-size:14px;
+        padding-bottom:15px;
+    }
+  .footer .col.social-icons{
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+  }
+ 
+/* Espaciado de los iconos */
+/* Facebook */
+  .footer .social-icons img[alt="Facebook"]{
+      margin-right: 0px;   /* aumenta o disminuye */
+  }
+  /* Twitter */
+  .footer .social-icons img[alt="Twitter"]{
+      margin-left: 0px;
+  }
+  /* Instagram */
+  .footer .social-icons img[alt="Instagram"]{
+      margin-left: -20px;
+  }
+  /* LinkedIn */
+  .footer .social-icons img[alt="LinkedIn"]{
+      margin-left: 0px;
+  }
+/* Centra los dos iconos de cada fila */
+.footer .col:last-child .row .col{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-right:0px;
+    
+    
+}
+/* Iconos */
+.social-icons img{
+    width:40px;
+    height:40px;
+    display:block;
+}
+  }

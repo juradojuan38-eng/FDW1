@@ -1,0 +1,501 @@
+/*======================================================
+                    RESET GENERAL
+======================================================*/
+/* Fuente utilizada en el sitio */
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+/* Reinicio de márgenes, rellenos y modelo de caja */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+/*======================================================
+                    BARRA DE NAVEGACIÓN
+======================================================*/
+/* Contenedor principal de la barra */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #E30E1E;
+      font-size: 24px;
+      font-family: 'Anton', sans-serif;
+      padding: 0px 25px;
+    }
+/* Enlaces del menú */
+    .navbar a {
+      text-decoration: none;
+      color: white !important;
+      padding: 10px 15px 3px; 
+      margin-right: 38px;
+      transition: color 0.3s;
+      position: relative; 
+      display: inline-block;
+    }
+/* Mantiene el color al pasar el cursor */
+    .navbar a:hover {
+      color: white !important;
+    }
+
+/* Línea animada debajo de cada enlace */
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      left: 9px; /* Ajuste para que la línea empiece donde termina el padding izquierdo */
+      right: 9px; /* Ajuste para que la línea termine donde empieza el padding derecho */
+      bottom: 0;
+      height: 6px;
+      background-color: white;
+      transform: scaleX(0); 
+      transform-origin: left; /* Animación desde la izquierda */
+      transition: transform 0.3s ease;
+    }
+    
+/* Animación de la línea */
+    .navbar a:hover::after {
+      transform: scaleX(1); /* La línea crece hasta su ancho completo */
+    }
+/* Evita interacción sobre el logo */
+    .navbar .navbar-brand img {
+      pointer-events: none;
+    }
+
+/* Línea amarilla debajo del navbar */   
+    .linea {
+      width: 100%;        /* largo */
+      height: 18px;        /* grosor */
+      background: #FCDA00;  /* color */
+    }
+/* Botón del menú responsive */
+    .navbar-toggler {
+      margin-top: -90px;
+    }
+
+/* Contenedor del logo */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+/* Imagen del logo */
+    .navbar .logo-container img {
+      max-width: 100px;
+      height: auto;
+    }
+/*======================================================
+            LOGO EN ESCRITORIO
+======================================================*/
+    @media (min-width: 992px) {
+      .logo-container {
+        justify-content: flex-start;
+        padding-left: 15px;
+      }
+    }
+
+/*======================================================
+              AJUSTE DEL MENÚ EN CELULARES
+======================================================*/
+    @media (max-width:576px ){
+      .navbar a::after{
+        left: 0;
+        width: 300px;   /* largo fijo */
+        right: auto;
+      }
+    }
+
+/* Estilos generales para el body */
+body {
+  font-family: 'Roboto', serif;
+  margin: 130px 56px 0 103px;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: black;
+  align-items: center;
+}
+
+/* Cuadro principal */
+.cuadro-principal {
+  background-color: white;
+  color: black;
+  padding: 100px 0px 100px 200px;
+  margin: 0px 40px 40px 40px;
+  width: 95%;
+  max-width: 1200px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Título del cuadro */
+h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+/* Subtítulo dentro del cuadro */
+p {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+/* Contenedor de los cuadros con información */
+.contenedor-cuadros {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  
+}
+
+/* Estilo del contenedor de cada cuadro con imagen a la izquierda */
+.info-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alineación de la imagen a la izquierda */
+  background-color: rgb(255, 255, 255); /* Color gris del contenedor */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  flex: 1;
+  height: 200px;
+  border: 2px solid rgba(0, 0, 0, .125);
+}
+
+/* Estilo de los cuadros de información */
+.cuadro {
+  background-color: rgb(255, 255, 255);
+  padding: 30px 50px 30px 50px;
+  border-radius: 8px;
+  text-align: left;
+  flex: 1;
+  height: 200px;
+  margin-bottom:25px;
+}
+
+/* Imagen dentro de cada cuadro */
+.imagen-cuadro {
+  width: 230px; /* Controla el tamaño de la imagen */
+  height: 230px;
+  border-top-left-radius: 8px;    /* esquina superior izquierda */
+  border-bottom-left-radius: 8px; /* esquina inferior izquierda */ /* Espacio entre la imagen y el texto */
+  object-fit: cover; /* Mantiene las proporciones */;
+}
+
+/* Estilo para los títulos de cada sección */
+.titulo-cuadro {
+  font-family: 'Anton', sans-serif;
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Estilo para los nombres */
+.nombre {
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 10px;
+}
+
+/* Estilo para la descripción debajo del nombre */
+.descripcion {
+  font-family: 'Roboto', serif;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  /* Ajustes del cuadro principal */
+  .cuadro-principal {
+    padding: 30px;
+    height: auto;
+  }
+
+  /* Hacer que la imagen y el contenido se apilen en pantallas pequeñas */
+  .info-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Reducir tamaño de la imagen */
+  .imagen-cuadro {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    height: 230px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  /* Ajustar padding y altura de los cuadros */
+  .cuadro {
+    padding: 15px;
+    height: 180px;
+  }
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  body{
+        margin:90px 10px 0;
+    }
+    .cuadro-principal{
+        width:100%;
+        margin:20px auto;
+        padding:25px 15px;
+    }
+    .contenedor-cuadros{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:25px;
+    }
+    .info-contenedor{
+        flex-direction:column;
+        width:95%;
+        max-width:360px;
+        height:auto;
+    }
+    .imagen-cuadro{
+        width:100%;
+        height:240px;
+        margin:0;
+        border-radius:8px 8px 0 0;
+    }
+    .cuadro{
+        width:100%;
+        height:auto;
+        padding:20px;
+        text-align:center;
+    }
+  h1 {
+    margin-top: 20px;  /* Menos separación en pantallas pequeñas */
+    margin-bottom: 20px; /* Menos separación con los elementos debajo */
+  }
+}
+
+/*======================================================
+                        FOOTER
+======================================================*/
+/* Contenedor principal */
+.footer {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+/* Contenedor interno */
+.footer.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+/* Logo */
+.footer-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+/* Imagen del logo */
+.footer-img {
+  width: 150px;
+  height: 150px;
+}
+/* Texto descriptivo */
+.footer-text {
+  flex: 2;
+  font-size: 16px;
+  line-height: 1.6;
+  
+}
+/* Párrafo del footer */
+.footer-text p {
+  font-size: 18px;
+  margin: 0px 0;
+  line-height: 1.6;
+  padding-bottom: 30px;
+}
+/* Contenedor de redes sociales */
+.social-icons {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 15px;
+}
+/* Iconos */
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  padding: 0; /* Asegúrate de que no haya padding adicional */
+  filter: grayscale(100%);
+}
+/* Efecto hover */
+.social-icons img:hover{
+  filter: sepia(100%);
+}
+/* Texto de derechos */
+.footer-copy {
+  font-size: 14px;
+  padding-bottom: 20px;
+  margin-top: 0px;
+}
+
+@media (max-width: 1024px) {
+  html, body {
+    width:100%;
+    overflow-x:hidden;
+  }
+  .footer > .container > .row{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+  .footer .container{
+    width: 100%;
+    height: 89%;
+  }
+  .footer-logo{
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+  .footer-copy{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    padding: 0;
+  }
+}
+
+
+/*======================================================
+                RESPONSIVE CELULARES
+                (Hasta 570px)
+======================================================*/
+/* Celulares */
+@media (max-width:570px){
+
+    /* Footer */
+    .footer .container{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+    }
+    /* Logo */
+    .footer-logo{
+        display:flex;
+        justify-content:center;
+        margin-bottom:20px;
+    }
+
+    .footer-img{
+        width:120px;
+        height:auto;
+    }
+
+    /* Texto */
+    .footer-text{
+        padding:0 0px;
+        margin-bottom:0px;
+    }
+
+    .footer-text p{
+        font-size:18px;
+        line-height:1.5;
+        margin:0;
+    }
+
+/* ===== REDES SOCIALES ===== */
+
+/* Contenedor de los iconos de redes sociales */
+    .footer .col:last-child{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:15px;
+        margin-top:20px;
+    }
+
+/* Organización de las filas de redes sociales */
+    .footer .col:last-child  .row{
+        width:auto !important;
+        height:auto !important;
+        margin:0 !important;
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+    }
+/* Texto de derechos de autor */
+    .footer-copy{
+        margin-top:20px;
+        text-align:center;
+        font-size:14px;
+        padding-bottom:15px;
+    }
+  .footer .col.social-icons{
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+  }
+ 
+/* Espaciado de los iconos */
+/* Facebook */
+  .footer .social-icons img[alt="Facebook"]{
+      margin-right: 0px;   /* aumenta o disminuye */
+  }
+  /* Twitter */
+  .footer .social-icons img[alt="Twitter"]{
+      margin-left: 0px;
+  }
+  /* Instagram */
+  .footer .social-icons img[alt="Instagram"]{
+      margin-left: -20px;
+  }
+  /* LinkedIn */
+  .footer .social-icons img[alt="LinkedIn"]{
+      margin-left: 0px;
+  }
+  
+
+/* Centra los dos iconos de cada fila */
+.footer .col:last-child .row .col{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-right:0px;
+    
+    
+}
+
+/* Contenedor de cada icono */
+
+
+/* Iconos */
+.social-icons img{
+    width:40px;
+    height:40px;
+    display:block;
+}
+  }
+
+
