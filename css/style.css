@@ -142,6 +142,7 @@
 /* Texto descriptivo */
 .footer-text {
   flex: 2;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   
@@ -152,6 +153,7 @@
   margin: 0px 0;
   line-height: 1.6;
   padding-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
 }
 /* Contenedor de redes sociales */
 .social-icons {

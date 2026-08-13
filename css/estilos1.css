@@ -126,44 +126,7 @@
     letter-spacing: 1px;
   }
 }
-/* Estilo del botón */
-#mi-boton button {
-  background-color: #71BBD9;  
-  color: #000000;                
-  padding: 20px 35px;        
-  border-radius: 10px;        
-  font-size: 25px;            
-  border: none;             
-  transition: background-color 0.3s ease;
-  font-family: 'Kaisei Tokumin', Kaisei Tokumin;
-  margin-top: 60px; /* Separar ligeramente el botón de los elementos arriba */
-  margin-bottom: 60px; /* Separar ligeramente el botón de los elementos abajo */
-  display: block; /* Asegura que el botón esté centrado */
-  margin-left: auto;
-  margin-right: auto;
-}
 
-#mi-boton button:hover {
-  background-color: #71BBD9;  
-}
-
-#mi-boton button:focus {
-  outline: none; 
-  box-shadow: 0 0 5px rgba(255, 193, 7, 0.8);
-}
-
-/* Ajuste del collapse */
-#collapseWidthExample {
-  left: 1000%;
-  min-height: 300px;
-  height: auto;
-  top: 50%;
-  font-family: 'Roboto', sans-serif; /* Cambia la fuente a Roboto */
-}
-
-#collapseWidthExample .card {
-  width: 80%; 
-}
 
 .icono {
   width: 100px;      
@@ -173,18 +136,14 @@
   margin-bottom: 25px;
 }
 
-/* Estilo de la tarjeta en el collapse */
-#collapseWidthExample .card-body {
-  display: flex;
-  padding: 45px;
-  font-size: 30px;
-  line-height: 1.4; 
-  color: #0d0d0e; 
-  background-color: #71BBD9; 
-  border-radius: 15px; 
-  font-family: 'Roboto', sans-serif; /* Cambia la fuente a Roboto también en el contenido del cartel */
-  margin-bottom: 30px;
+.carousel-caption h1 {
+  font-family: 'Anton', sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* Sombra para garantizar lectura sobre cualquier foto */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
+
 /*======================================================
                         FOOTER
 ======================================================*/
@@ -401,4 +360,27 @@
     height:40px;
     display:block;
 }
+.titulo {
+    font-size: 24px !important;    /* Tamaño cómodo para pantallas chicas */
+    margin-top: 25px !important;    /* Menos espacio arriba */
+    margin-bottom: 25px !important; /* Menos espacio abajo */
+    padding: 0 15px;                /* Margen interno para que no toque los bordes */
+    line-height: 1.3;
+  }
+
+  /* Ajuste de la tipografía dentro del carrusel en celular */
+  .carousel-caption h1 {
+    font-size: 20px !important;
+  }
+
+  /* Posición de la leyenda del carrusel en celulares */
+  .carousel-caption {
+    bottom: 15px;
+    padding-bottom: 5px;
+  }
+  .carousel-inner img {
+    height: 280px;        /* O la altura que prefieras */
+    object-fit: cover;    /* Evita que la imagen se estire */
+    object-position: center;
+  }
   }

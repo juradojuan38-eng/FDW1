@@ -177,6 +177,7 @@ h2{
   font-weight: normal;
   padding: 0 20px;
   margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .btn-primary {
@@ -185,12 +186,12 @@ h2{
   font-family: 'Anton', sans-serif;
   font-size: 18px;
   padding: 8px 20px;
-  border-radius: 30px;
+  border-radius: 5px;
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #ffcc00;
+  background-color: #726f61;
 }
 .card-container1 {
   display: flex; 
